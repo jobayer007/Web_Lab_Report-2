@@ -194,10 +194,11 @@ body {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 36px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
     max-width: 1100px;
     margin: 50px auto 0;
 }
@@ -221,8 +222,9 @@ body {
 }
 
 .project-card.compact {
-    max-width: 370px;
-    margin: 0 auto;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 0 36px 0;
 }
 
 .project-card.compact .project-image img {
