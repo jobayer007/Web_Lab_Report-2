@@ -17,24 +17,24 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f5f5f5;
+            background-color: #eaeaea;
         }
         
         .calculator {
-            width: 380px; /* Increased from 300px */
-            background-color: #8e8e8e;
-            border-radius: 12px;
-            padding: 20px; /* Increased padding */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+            width: 380px;
+            background: #cccccc; 
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
         }
         
         .display {
-            background-color: #f8f8f8;
-            border-radius: 8px;
-            padding: 20px; /* Increased padding */
-            margin-bottom: 20px; /* Increased margin */
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 24px;
             text-align: right;
-            min-height: 100px; /* Increased from 80px */
+            min-height: 100px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -42,47 +42,65 @@
         
         .previous-operand {
             color: #777;
-            font-size: 18px; /* Increased font size */
-            min-height: 25px; /* Increased height */
+            font-size: 18px; 
+            min-height: 25px; 
         }
         
         .current-operand {
             color: #333;
-            font-size: 40px; /* Increased font size */
-            min-height: 50px; /* Increased height */
+            font-size: 40px; 
+            min-height: 50px; 
         }
         
         .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 15px; /* Increased gap */
+            grid-gap: 15px; 
         }
         
         button {
             border: none;
             outline: none;
-            padding: 20px 10px; /* Increased padding */
-            font-size: 22px; /* Increased font size */
-            border-radius: 8px;
+            padding: 22px 0;
+            font-size: 22px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: background 0.2s;
+            background: #e0e0e0;
+            color: #222;
+            font-weight: bold;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
         }
         
         button:active {
-            transform: scale(0.95);
+            background: #cccccc;
         }
         
-        .digit, .operation, .equal, .decimal {
-            background-color: #FF8000; /* Pure orange */
-            color: white;
+        .digit, .decimal {
+            background: #e0e0e0;
+            color: #222;
         }
         
-        .digit:hover, .operation:hover, .equal:hover, .decimal:hover {
-            background-color: #FF9933; /* Slightly lighter orange on hover */
+        .digit:hover, .decimal:hover {
+            background: #cccccc;
         }
         
-        .operation, .equal {
-            font-weight: bold;
+        .operation {
+            background: #1976d2;
+            color: #fff;
+        }
+        
+        .operation:hover {
+            background: #1565c0;
+        }
+        
+        .equal {
+            background: #43a047;
+            color: #fff;
+        }
+        
+        .equal:hover {
+            background: #388e3c;
         }
         
         .special {
@@ -90,21 +108,21 @@
         }
         
         .clear {
-            background-color: #ffcaca;
-            color: #ff4040;
+            background: #e53935;
+            color: #fff;
         }
         
         .clear:hover {
-            background-color: #ffb0b0;
+            background: #b71c1c;
         }
         
         .delete {
-            background-color: #d0d0ff;
-            color: #5050ff;
+            background: #ff9800;
+            color: #fff;
         }
         
         .delete:hover {
-            background-color: #b8b8ff;
+            background: #f57c00;
         }
     </style>
 </head>
@@ -141,7 +159,7 @@
     </div>
     
     <script>
-        // Calculator functionality
+       
         class Calculator {
             constructor(previousOperandElement, currentOperandElement) {
                 this.previousOperandElement = previousOperandElement;
